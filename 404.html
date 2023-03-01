@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        background-color: lightgrey;
+      }
+      .err {
+        font-family: sans-serif;
+        padding: 16px;
+        background-color: white;
+        border: 1px solid black;
+      }
+    </style>
+      
+    <script>
+      const oldBrowserMap = {
+        "mosaic": "nm2-mac",
+        "nsmac3": "ns3-mac",
+        "nswin": "ns4-win",
+        "nsmac4": "ns4-mac",
+        "nsmac4.8": "ns4-mac",
+        "nslinux": "ns3-mac",
+        "ie4": "ie4-mac",
+        "ie4mac": "ie4-mac",
+        "ie5.5": "ie5",
+        "ie5mac": "ie5",
+        "safari": "ff10",
+        "firefox": "ff10",
+        "chromium5": "ruffle",
+        "chrome": "ruffle"
+      };
+      const parsed = window.location.pathname.match(/([\w]+)\/(.+)/);
+      if (parsed) {
+        const newUrl = `https://oldweb.today/?browser=${oldBrowserMap[parsed[1]] || "ruffle"}#${parsed[2]}`;
+        window.location.href = newUrl;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="err"><i>Classic OldWeb.today</i> is no logner available. Go to&nbsp;<a href="https://oldweb.today">https://oldweb.today</a></div>
+  </body>
+</html>
